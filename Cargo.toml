@@ -1,6 +1,6 @@
 [package]
 name = "simple-generators-util"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Mikail Bagishov <bagishov.mikail@yandex.ru>"]
 edition = "2018"
 description = "Simple tools for working with generators"
