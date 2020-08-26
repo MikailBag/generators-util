@@ -1,0 +1,11 @@
+[package]
+name = "simple-generators-util"
+version = "0.1.0"
+authors = ["Mikail Bagishov <bagishov.mikail@yandex.ru>"]
+edition = "2018"
+
+[dependencies]
+pin-project = "0.4.23"
+
+[features]
+alloc = []
