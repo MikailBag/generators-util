@@ -3,6 +3,8 @@ name = "simple-generators-util"
 version = "0.1.0"
 authors = ["Mikail Bagishov <bagishov.mikail@yandex.ru>"]
 edition = "2018"
+description = "Simple tools for working with generators"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 pin-project = "0.4.23"
