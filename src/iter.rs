@@ -69,6 +69,19 @@ impl<G: Generator<()> + Unpin> FusedGenIterator<G> {
     pub fn is_completed(&self) -> bool {
         matches!(self, FusedGenIterator::Generator(_))
     }
+
+    /// Unwraps generator return value.
+    /// This function panics if called before generator completed.
+    /// (I.e. before `next` returned None, or `is_completed` returned true).
+    #[track_caller]
+    pub fn into_return(self) -> G::Return {
+        match self {
+            FusedGenIterator::Completed(c) => c,
+            FusedGenIterator::Generator(_) => {
+                panic!("into_return called, but generator has not completed yat")
+            }
+        }
+    }
 }
 
 impl<G: Generator<()> + Unpin> Iterator for FusedGenIterator<G> {
